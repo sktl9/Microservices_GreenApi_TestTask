@@ -1,0 +1,13 @@
+FROM node:14
+
+RUN mkdir -p /app/m1
+ADD . /app/m1
+WORKDIR /app/m1
+
+COPY ./m1 .
+
+RUN npm install
+
+EXPOSE 3000
+
+CMD ["node", "index.js"]
